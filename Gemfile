@@ -13,7 +13,7 @@ gem 'sprockets', '~>3.0'
 gem "bigdecimal", "~> 1.4" if RAILS_VERSION <= "4.2.0"
 gem "loofah", "2.20.0" if RUBY_VERSION < "2.5.0"
 
-if RUBY_VERSION >= "2.7.0" && RAILS_VERSION >= "6.0.0"
+if RUBY_VERSION >= "2.7.0" && RAILS_VERSION >= "6.1.0"
   gem 'rspec-rails', "~> 6.1"
 end
 
