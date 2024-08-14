@@ -15,15 +15,20 @@ module OkComputer
     def needs_migration?
       if ActiveRecord::Migrator.respond_to?(:needs_migration?) # Rails <= 5.1
         ActiveRecord::Migrator.needs_migration?
-      else # Rails >= 5.2
+      elsif ActiveRecord::Base.connection.migration_context.respond_to?(:needs_migration?) # Rails >= 5.2 and Rails <= 7.1
         ActiveRecord::Base.connection.migration_context.needs_migration?
+      else # Rails >= 7.2
+        ActiveRecord::Base.connection.pool.migration_context.needs_migration?
       end
     end
 
     def supported?
       ActiveRecord::Migrator.respond_to?(:needs_migration?) ||
         (ActiveRecord::Base.connection.respond_to?(:migration_context) &&
-         ActiveRecord::Base.connection.migration_context.respond_to?(:needs_migration?))
+         ActiveRecord::Base.connection.migration_context.respond_to?(:needs_migration?)) ||
+        (ActiveRecord::Base.connection.respond_to?(:pool) &&
+          ActiveRecord::Base.connection.pool.respond_to?(:migration_context) &&
+          ActiveRecord::Base.connection.pool.migration_context.respond_to?(:needs_migration?))
     end
 
     private
