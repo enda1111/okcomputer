@@ -68,7 +68,11 @@ module OkComputer
         end
 
         it {is_expected.not_to be_successful_check }
-        it {is_expected.to have_message "Error: 'undefined method `database' for Mongoid:Module'" }
+        if RUBY_VERSION > '3.3.0'
+          it {is_expected.to have_message "Error: 'undefined method `database' for module Mongoid" }
+        else
+          it {is_expected.to have_message "Error: 'undefined method `database' for Mongoid:Module" }
+        end
       end
     end
 
