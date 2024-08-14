@@ -29,7 +29,7 @@ Gem::Specification.new do |s|
   s.test_files = Dir["test/**/*"]
 
   s.add_development_dependency "sqlite3", "~> 1.3.6"
-  s.add_development_dependency "rspec-rails", "~> 4.0"
+  s.add_development_dependency "rspec-rails", "~> 6.1"
   s.add_development_dependency "coveralls"
   s.add_development_dependency "sequel"
 end
