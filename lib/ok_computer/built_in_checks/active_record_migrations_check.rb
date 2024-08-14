@@ -26,9 +26,8 @@ module OkComputer
       ActiveRecord::Migrator.respond_to?(:needs_migration?) ||
         (ActiveRecord::Base.connection.respond_to?(:migration_context) &&
          ActiveRecord::Base.connection.migration_context.respond_to?(:needs_migration?)) ||
-        (ActiveRecord::Base.connection.respond_to?(:pool) &&
-         ActiveRecord::Base.connection.pool.respond_to?(:migration_context) &&
-         ActiveRecord::Base.connection.pool.migration_context.respond_to?(:needs_migration?))
+        (ActiveRecord::Base.connection_pool.respond_to?(:migration_context) &&
+         ActiveRecord::Base.connection_pool.migration_context.respond_to?(:needs_migration?))
     end
 
     private
