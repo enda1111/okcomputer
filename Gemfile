@@ -15,6 +15,6 @@ if RUBY_VERSION >= "2.7.0" && RAILS_VERSION >= "6.0"
 end
 
 gem 'bigdecimal', '~> 1.4' if RAILS_VERSION <= '4.2'
-gem "loofah", "2.20.0" if RUBY_VERSION < "2.5"
+gem "loofah", "2.20.0" if RUBY_VERSION < "2.5.0"
 
 gemspec

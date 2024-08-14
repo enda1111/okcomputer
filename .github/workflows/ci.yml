@@ -12,15 +12,15 @@ jobs:
         include:
           - { ruby: "2.4", rails: "4.2", bundler: "1" }
           - { ruby: "2.5", rails: "4.2", bundler: "1" }
-#          - { ruby: "2.7", rails: "7.0", bundler: "default" }
-#          - { ruby: "3.0", rails: "7.0", bundler: "default" }
-#          - { ruby: "3.0", rails: "7.1", bundler: "default" }
-#          - { ruby: "3.1", rails: "7.1", bundler: "default" }
-#          - { ruby: "3.2", rails: "7.1", bundler: "default" }
-#          - { ruby: "3.3", rails: "7.1", bundler: "default" }
-#          - { ruby: "3.1", rails: "7.2", bundler: "default" }
-#          - { ruby: "3.2", rails: "7.2", bundler: "default" }
-#          - { ruby: "3.3", rails: "7.2", bundler: "default" }
+          - { ruby: "2.7", rails: "7.0", bundler: "default" }
+          - { ruby: "3.0", rails: "7.0", bundler: "default" }
+          - { ruby: "3.0", rails: "7.1", bundler: "default" }
+          - { ruby: "3.1", rails: "7.1", bundler: "default" }
+          - { ruby: "3.2", rails: "7.1", bundler: "default" }
+          - { ruby: "3.3", rails: "7.1", bundler: "default" }
+          - { ruby: "3.1", rails: "7.2", bundler: "default" }
+          - { ruby: "3.2", rails: "7.2", bundler: "default" }
+          - { ruby: "3.3", rails: "7.2", bundler: "default" }
 
     name: Ruby ${{ matrix.ruby }} and Rails ${{ matrix.rails }}
     env:
