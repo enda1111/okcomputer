@@ -83,7 +83,7 @@ module OkComputer
         end
 
         it {is_expected.not_to be_successful_check }
-        it {is_expected.to have_message "Error: 'undefined method `cluster' for nil:NilClass'" }
+        it {is_expected.to have_message "Error: 'undefined method `cluster' for nil:NilClass" }
       end
     end
 

@@ -68,7 +68,7 @@ module OkComputer
         end
 
         it {is_expected.not_to be_successful_check }
-        it {is_expected.to have_message "Error: 'undefined method `database' for Mongoid:Module'" }
+        it {is_expected.to have_message "Error: 'undefined method `database' for Mongoid:Module" }
       end
     end
 
