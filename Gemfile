@@ -14,6 +14,7 @@ if RUBY_VERSION >= "2.7.0"
   gem 'rspec-rails', "~> 6.1"
 end
 
-gem 'bigdecimal', '~> 1.4' if RUBY_VERSION < '2.7' && RAILS_VERSION <= '4.2'
+gem 'bigdecimal', '~> 1.4' if RAILS_VERSION <= '4.2'
+gem "loofah", "2.20.0" if RUBY_VERSION < "2.5"
 
 gemspec
