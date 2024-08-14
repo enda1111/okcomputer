@@ -10,7 +10,7 @@ gem "test-unit", "~> 3.0" if RUBY_VERSION >= "2.2" && RAILS_VERSION == "3.2"
 
 gem 'sprockets', '~>3.0'
 
-if RUBY_VERSION >= "2.7.0"
+if RUBY_VERSION >= "2.7.0" && RAILS_VERSION >= "6.0"
   gem 'rspec-rails', "~> 6.1"
 end
 
